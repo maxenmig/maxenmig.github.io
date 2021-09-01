@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@700;800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Rubik', sans-serif;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #0F52A5;
+}
+
+body header {
+  width: 100vw;
+  height: 11vh;
+  background-color: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body header button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 25vw;
+  height: 11vh;
+  color: white;
+  border: none;
+  background: none;
+  font-size: 2.5vh;
+}
+
+body .tableTitle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100vw;
+  height: 5vh;
+  font-size: 2.5vh;
+  color: white;
+}
+
+body table {
+  font-size: 2.5vh;
+}
+
+body table tr td {
+  color: white;
+}
+
+body table tr td a {
+  color: white;
+}
+
+body table tr .nameId {
+  margin-top: 5vh;
+}
+/*# sourceMappingURL=style.css.map */

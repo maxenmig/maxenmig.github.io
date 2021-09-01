@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@700;800&display=swap');
+
+$blue: #0F52A5;
+
+@mixin flex($direction, $justify, $align){
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin button(){
+    @include flex(row, center,center);
+    width: 25vw;
+    height: 11vh;
+    color: white;
+    border: none;
+    background: none;
+    font-size: 2.5vh;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
+
+html{
+    overflow-x: hidden;
+}
+
+body{
+    background-color: $blue;
+    header{
+        width: 100vw;
+        height: 11vh;
+        background-color: transparent;
+        @include flex(row, left, center);
+        button{
+            @include button();
+        }
+    }
+    .tableTitle{
+        @include flex(row, center, center);
+        width: 100vw;
+        height: 5vh;
+        font-size: 2.5vh;
+        color: white;
+    }
+    table{
+        font-size: 2.5vh;
+        tr{
+            td{
+              color: white;
+              a{
+                  color: white;
+              }  
+            }
+            .nameId{
+                margin-top: 5vh;
+            }
+        }
+    }
+}
+
