@@ -1,24 +1,24 @@
-@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap");
 * {
   margin: 0;
   padding: 0;
+  font-family: "Rubik", sans-serif;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: 'Rubik', sans-serif;
 }
 
 html {
   overflow-x: hidden;
+  width: 100vw;
 }
 
 body {
-  background-color: #0F52A5;
+  background-color: #2a51ff;
 }
 
-body header {
+body .header {
   width: 100vw;
   height: 11vh;
-  background-color: transparent;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -34,7 +34,15 @@ body header {
           align-items: center;
 }
 
-body header button {
+body .header .dropDownButton {
+  cursor: pointer;
+  font-size: 2.2vh;
+  margin-left: 1vh;
+  width: 25vw;
+  height: 8vh;
+  color: white;
+  border: 1px solid white;
+  background: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -42,21 +50,47 @@ body header button {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 25vw;
-  height: 11vh;
+}
+
+body .header .dropDownButton .arrow {
+  width: 5vw;
+  height: auto;
+}
+
+body .dropDownMenu {
+  z-index: 1;
+  background-color: #2a51ff;
+  display: none;
+  position: absolute;
+}
+
+body .dropDownMenu button {
+  margin: 0vh 1vh;
+  width: auto;
+  height: 4vh;
   color: white;
+  font-size: 2.2vh;
   border: none;
   background: none;
-  font-size: 2.5vh;
 }
 
-body .tableTitle {
+body .dropDownMenu button a {
+  color: white;
+}
+
+body .main .title {
+  z-index: 0;
+  height: 4vh;
+  width: 100vw;
+  color: white;
+  font-size: 2.5vh;
+  font-weight: bold;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -70,25 +104,51 @@ body .tableTitle {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+body .main table {
+  color: white;
+}
+
+body .main table a {
+  color: white;
+}
+
+body .main table .row {
+  height: 4vh;
+}
+
+body .footer {
   width: 100vw;
   height: 5vh;
-  font-size: 2.5vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   color: white;
+  font-size: 2.2vh;
+  font-weight: bold;
 }
 
-body table {
-  font-size: 2.5vh;
-}
-
-body table tr td {
-  color: white;
-}
-
-body table tr td a {
-  color: white;
-}
-
-body table tr .nameId {
-  margin-top: 5vh;
+@media only screen and (min-width: 1848px) and (min-height: 949px) {
+  body .header .dropDownButton {
+    width: 10vw;
+  }
+  body .header .dropDownButton .arrow {
+    width: 2vw;
+    height: auto;
+  }
+  body .main table .row {
+    font-size: 2.5vh;
+  }
 }
 /*# sourceMappingURL=style.css.map */

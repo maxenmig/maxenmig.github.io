@@ -1,66 +1,115 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap');
 
-$blue: #0F52A5;
+$blue: rgb(42, 81, 255);
+$font: 'Rubik', sans-serif;
 
-@mixin flex($direction, $justify, $align){
+*{
+    margin: 0;
+    padding: 0;
+    font-family: $font;
+    box-sizing: border-box;
+}
+
+@mixin flex($direction ,$justify, $align){
     display: flex;
     flex-direction: $direction;
     justify-content: $justify;
     align-items: $align;
 }
 
-@mixin button(){
-    @include flex(row, center,center);
-    width: 25vw;
-    height: 11vh;
-    color: white;
-    border: none;
-    background: none;
-    font-size: 2.5vh;
-}
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Rubik', sans-serif;
-}
-
 html{
     overflow-x: hidden;
+    width: 100vw;
 }
-
 body{
     background-color: $blue;
-    header{
+    .header{
         width: 100vw;
         height: 11vh;
-        background-color: transparent;
         @include flex(row, left, center);
-        button{
-            @include button();
+        .dropDownButton{
+            cursor: pointer;
+            font-size: 2.2vh;
+            margin-left: 1vh;
+            width: 25vw;
+            height: 8vh;
+            color: white;
+            border: 1px solid white;
+            background: none;
+            @include flex(row, space-evenly, center);
+            .arrow{
+                width: 5vw;
+                height: auto;
+            }
         }
     }
-    .tableTitle{
-        @include flex(row, center, center);
+    .dropDownMenu{
+        z-index: 1;
+        background-color: $blue;
+        display: none;
+        position: absolute;
+        button{
+            margin: 0vh 1vh;
+            width: auto;
+            height: 4vh;
+            color: white;
+            font-size: 2.2vh;
+            border: none;
+            background: none;
+            a{
+                color: white;
+            }
+        }
+    }
+    .main{
+        .title{
+            z-index: 0;
+            height: 4vh;
+            width: 100vw;
+            color: white;
+            font-size: 2.5vh;
+            font-weight: bold;
+            @include flex(row, center, center);
+        }
+        table{
+            color: white;
+            a{
+                color: white;
+            }
+            .row{
+                height: 4vh;
+            }
+        }
+    }
+
+    .footer{
         width: 100vw;
         height: 5vh;
-        font-size: 2.5vh;
-        color: white;
+        @include flex(row, center, center);
+        color:  white;
+        font-size: 2.2vh;
+        font-weight: bold;
     }
-    table{
-        font-size: 2.5vh;
-        tr{
-            td{
-              color: white;
-              a{
-                  color: white;
-              }  
+
+}
+
+@media only screen and (min-width: 1848px) and (min-height: 949px){
+    body{
+        .header{
+            .dropDownButton{
+                width: 10vw;
+                .arrow{
+                    width: 2vw;
+                    height: auto;
+                }
             }
-            .nameId{
-                margin-top: 5vh;
+        }
+        .main{
+            table{
+                .row{
+                    font-size: 2.5vh;
+                }
             }
         }
     }
 }
-
