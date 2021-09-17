@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
+
+$font: 'Ubuntu', sans-serif;
+$darkGray: #333333;
+$red: #FE3C5F;
+
+@mixin flex($direction, $justify, $align){
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $font;
+}
+
+html{
+    overflow-x: hidden;
+}
+
+
+body{
+    color: white;
+    background-color: $darkGray;
+    @include flex(column, none, center);
+    width: 100vw;
+    overflow-x: hidden;
+    .header{
+        width: 100vw;
+        height: 11vh;
+        @include flex(row, space-evenly, center);
+        .left{
+            width: 40vw;
+            height: inherit;
+            @include flex(row, flex-start, center);
+            button{
+                color: white;
+                background: none;
+                border: 1px solid white;
+                margin: 1vh;
+                padding: 2.5vh 2vh;
+                font-weight: bold;
+                cursor: pointer;
+            }
+        }
+        .right{
+            width: 60vw;
+            height: inherit;
+            @include flex(row, flex-end, center);
+            button{
+                border: none;
+                background: none;
+                margin: 2vh;
+                #search{
+                    width: 3.75vh;
+                    height: auto;
+                }
+                cursor: pointer;
+            }
+        }
+    }
+    .menu{
+        display: none;
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        z-index: 3;
+        background-color: $darkGray;
+        .box{
+            width: 100vw;
+            height: 11vh;
+            .menuHead{
+                width: 100vw;
+                height: inherit;
+                @include flex(row, space-between, center);
+                button{
+                    color: white;
+                    border: none;
+                    background: none;
+                    margin: 2vh;
+                    #cross{
+                        width: 3.75vh;
+                        height: auto;
+                    }
+                    cursor: pointer;
+                }
+            }
+            .searchInput{
+                width: 100vw;
+                height: 5vw;
+                @include flex(row, space-evenly, center);
+                .innerInput{
+                    width: 30vw;
+                    height: 5vw;
+                    @include flex(row, space-evenly, center);
+                    input{
+                        width: 20vw;
+                        height: 4vh;
+                        outline: none;
+                        border: 1px solid rgba(0,0,0,0);
+                        border-bottom: 1px solid white;
+                        background: none;
+                        color: white;
+                        font-size: 2.3vh;
+                    }
+                    #submit{
+                        border: none;
+                        background: none;
+                        outline: none;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+        .content{
+            width: 100vw;
+            height: 89vh;
+            @include flex(row, space-evenly, center);
+            .search{
+                width: 100vw;
+                height: 89vh;
+            }
+        }
+    }
+    .subs{
+        position: absolute;
+        top:11vh;
+        width: 100vw;
+        height: 16vh;
+        background-color: $darkGray;
+        display: none;
+        .subjectNameButton{
+            border: none;
+            background: none;
+            cursor: pointer;
+            color: white;
+            padding: 1vh;
+            font-weight: bold;
+            a{
+                color: white;
+                font-size: 2vh;
+                text-decoration: none;
+            }
+        }
+    }
+    .main{
+        width: 100vw;
+        height: auto;
+        .divider{
+            width: 100vw;
+            height: 5vh;
+            @include flex(row, center, center);
+            font-size: 2.2vh;
+        }
+        .table{
+            width: 100vw;
+            overflow-x: hidden;
+            .tableRow{
+                @include flex(row, flex-start, center);
+                margin-bottom:1vh;
+                border: 1px solid white;
+                padding: 1vh 0 1vh;
+                .link{
+                    font-size: 2vh;
+                    word-break: break-all;
+                    color:white;
+                    text-decoration: none;
+                }
+                .idCell, .id{
+                    width: 4vw;
+                    @include flex(column, flex-start, center);
+                    margin: 0.4vh;
+                }
+                .nameCell{
+                    width: 90vw;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 375px) and (min-height: 667px){
+    .id{
+        font-size: 2vh;
+    }
+}
+
+@media only screen and (min-width: 1848px) and (min-height: 949px){
+    .table{
+        width: 50vw;
+        position: relative;
+        .tableRow{
+            width: 50vw;
+            position: relative;
+            left: 25vw;
+        }
+    }
+    #menuButton, #cross{
+        margin-right: 4vh;
+    }
+    #menu, #cancel{
+        width: 4vh;
+        height: auto;
+    }
+}

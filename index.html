@@ -4,30 +4,97 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MaxenMig</title>
-    <link rel="stylesheet" href="./sass/style.css">
-    <script src="./js/dropdown.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js" integrity="sha512-UxP+UhJaGRWuMG2YC6LPWYpFQnsSgnor0VUF3BHdD83PS/pOpN+FYbZmrYN+ISX8jnvgVUciqP/fILOXDjZSwg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>MaxEnMig</title>
+    <link rel="stylesheet" href="./sass/index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+    <script src="./js/anim.js"></script>
+    <script src="./js/files.js"></script>
 </head>
 <body>
+    <div class="menu">
+        <div class="box">
+            <div class="menuHead">
+                <button class="clrMode" onclick="colorMode()">
+                    <svg width="80" height="32" viewBox="0 0 80 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="Group 1">
+                            <rect id="Rectangle 2" width="80" height="32" rx="16" fill="#5C5C5C"/>
+                            <circle id="circle" cx="64" cy="16" r="12" fill="#C4C4C4"/>
+                        </g>
+                    </svg>
+                    
+                    <p id="colorMode">Color Mode: Dark</p>                   
+                </button>
+                <button onclick="menu()" onmouseenter="menuAnim(true)" onmouseleave="menuAnim(false)">
+                    <svg id="cross" width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="cancel" clip-path="url(#clip0)">
+                            <g id="Group">
+                                <g id="Group_2">
+                                    <path id="crossFill" class="vector" d="M284.286 256.002L506.143 34.144C513.954 26.333 513.954 13.669 506.143 5.859C498.332 -1.951 485.668 -1.952 477.858 5.859L256 227.717L34.143 5.859C26.332 -1.952 13.668 -1.952 5.85801 5.859C-1.95199 13.67 -1.95299 26.334 5.85801 34.144L227.715 256.001L5.85801 477.859C-1.95299 485.67 -1.95299 498.334 5.85801 506.144C9.76301 510.049 14.882 512.001 20.001 512.001C25.12 512.001 30.238 510.049 34.144 506.144L256 284.287L477.857 506.144C481.762 510.049 486.881 512.001 492 512.001C497.119 512.001 502.237 510.049 506.143 506.144C513.954 498.333 513.954 485.669 506.143 477.859L284.286 256.002Z" fill="white"/>
+                                </g>
+                            </g>
+                        </g>
+                            <defs>
+                                <clipPath id="clip0">
+                                    <rect width="512.001" height="512.001" fill="white"/>
+                                </clipPath>
+                            </defs>
+                        </svg>                                        
+                </button>
+            </div>
+            <div class="searchInput">
+                <p>NOT DONE</p>
+                <div class="innerInput">
+                    <form action="./js/search.js">
+                        <input type="text" name="searchTerm" id="textInput">
+                        <button type="submit" id="submit" value="">
+                            <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g id="magnifying-glass 1" clip-path="url(#clip0)">
+                                    <g id="Group">
+                                        <path id=submitTerm" id="Vector" d="M20.194 3.46C15.581 -1.153 8.07301 -1.153 3.46001 3.46C-1.15199 8.074 -1.15199 15.581 3.46001 20.195C7.56801 24.302 13.966 24.742 18.576 21.535C18.673 21.994 18.895 22.432 19.252 22.789L25.97 29.507C26.949 30.484 28.531 30.484 29.505 29.507C30.483 28.529 30.483 26.947 29.505 25.972L22.787 19.252C22.432 18.898 21.993 18.675 21.534 18.578C24.743 13.967 24.303 7.57 20.194 3.46ZM18.073 18.074C14.629 21.518 9.02401 21.518 5.58101 18.074C2.13901 14.63 2.13901 9.026 5.58101 5.582C9.02401 2.139 14.629 2.139 18.073 5.582C21.517 9.026 21.517 14.63 18.073 18.074Z" fill="white"/>
+                                    </g>
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0">
+                                        <rect width="30.239" height="30.239" fill="white"/>
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="header">
-        <button class="dropDownButton" onclick="dropDown()">
-            VAKKEN
-            <svg class="arrow" width="255" height="255" viewBox="0 0 255 255" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 63.75L127.5 191.25L255 63.75H0Z" fill="white"/>
-            </svg>            
-        </button>
+        <div class="left">
+            <button id="subjectsButton" onclick="openSubjects()" onmouseenter="subjectsAnim(true)" onmouseleave="subjectsAnim(false)">
+                VAKKEN
+                <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path id="arrow" d="M6 8L0.803847 0.5L11.1962 0.500001L6 8Z" fill="white"/>
+                </svg>                
+            </button>
+        </div>
+        <div class="right">
+            <button id="menuButton" onclick="menu()" onmouseenter="menuAnim(true)" onmouseleave="menuAnim(false)">
+                <svg id="menu" width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g id="menu 1">
+                        <g id="Group">
+                            <g id="Menu_1_">
+                                <path class="vector" id="Vector" d="M1.03122 10.3125H31.9687C32.538 10.3125 32.9999 9.85046 32.9999 9.28127C32.9999 8.712 32.5379 8.25005 31.9687 8.25005H1.03122C0.46195 8.25005 0 8.71208 0 9.28127C0 9.85046 0.462036 10.3125 1.03122 10.3125Z" fill="white"/>
+                                <path class="vector" id="Vector_2" d="M31.9687 15.4688H1.03122C0.46195 15.4688 0 15.9308 0 16.5C0 17.0692 0.462036 17.5312 1.03122 17.5312H31.9687C32.538 17.5312 32.9999 17.0692 32.9999 16.5C32.9999 15.9308 32.538 15.4688 31.9687 15.4688Z" fill="white"/>
+                                <path class="vector" id="Vector_3" d="M31.9687 22.6875H11.3437C10.7744 22.6875 10.3125 23.1496 10.3125 23.7187C10.3125 24.288 10.7745 24.75 11.3437 24.75H31.9687C32.538 24.75 32.9999 24.2879 32.9999 23.7187C33 23.1495 32.538 22.6875 31.9687 22.6875Z" fill="white"/>
+                            </g>
+                        </g>
+                    </g>
+                </svg>                
+            </button>
+        </div>
+    </div>
+    <div class="subs">
+        <script src="./js/btn.js"></script>
     </div>
     <div class="main">
-        <div class="dropDownMenu">
-            <script src="./js/butn.js"></script>
-        </div>
-        <div class="inner">
-            <script src="./js/files.js"></script>
-        </div>
-    </div>
-    <div class="footer">
-        <p>MaxenMig <script>document.write(new Date().getFullYear());</script></p>
+        <script src="./js/main.js"></script>
     </div>
 </body>
 </html>
