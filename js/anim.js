@@ -1,4 +1,5 @@
 var menuVar = false;
+var color = "white";
 const subjectsAnim = (bool) => {
     if (window.innerWidth > 412){
         switch (bool){
@@ -7,8 +8,8 @@ const subjectsAnim = (bool) => {
                 gsap.to('#arrow', {duration:0.2, fill:"#FE3C5F"});
                 break;
             case false:
-                gsap.to('#subjectsButton', {duration: 0.2, color:"white", borderColor:"white"});
-                gsap.to('#arrow', {duration:0.2, fill:"white"});
+                gsap.to('#subjectsButton', {duration: 0.2, color:color, borderColor:color});
+                gsap.to('#arrow', {duration:0.2, fill:color});
                 break;
         }
     }
@@ -36,7 +37,7 @@ const menuAnim = (bool) => {
                 gsap.to('.vector', {duration:0.2, fill:"#FE3C5F"});
                 break;
             case false:
-                gsap.to('.vector', {duration:0.2, fill:"white"});
+                gsap.to('.vector', {duration:0.2, fill:color});
                 break;
         }
     }
@@ -62,6 +63,7 @@ var colorVar = false;
 const colorMode = () => {
     switch (colorVar){
         case false:
+            color = "black";
             gsap.to("body", {duration:0, backgroundColor:"white"});
             gsap.to(".menu", {duration: 0, backgroundColor:"white"});
             gsap.to(".clrMode, #subjectsButton", {duration:0,color:"black"});
@@ -77,6 +79,7 @@ const colorMode = () => {
             colorVar = true;
             break;
         case true:
+            color = "white";
             gsap.to("body", {duration:0, backgroundColor:"#333333"});
             gsap.to(".menu", {duration:0, backgroundColor:"#333333"});
             gsap.to(".clrMode, #subjectsButton", {duration:0, color:"white"});
